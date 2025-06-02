@@ -1,0 +1,30 @@
+# API Web
+Flask==2.0.2
+Flask-CORS==3.0.10
+Werkzeug==2.0.3
+gunicorn==20.1.0
+
+# Requêtes HTTP
+requests==2.28.1
+urllib3==1.26.12
+
+# Manipulation d'ontologies et inférence
+rdflib==6.2.0
+owlrl==6.0.2
+Owlready2==0.36
+
+# Gestion des dates et du temps
+python-dateutil==2.8.2
+pytz==2022.2.1
+
+# Traitement de données
+numpy==1.23.3
+pandas==1.4.4
+
+# Utilitaires
+python-dotenv==0.21.0
+tqdm==4.64.1
+
+# Tests
+pytest==7.0.1
+pytest-flask==1.2.0

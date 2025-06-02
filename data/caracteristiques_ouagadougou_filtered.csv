@@ -1,0 +1,31 @@
+categorie,sous_categorie,description,valeur,unite,source,annee_reference,impact_inondation
+Relief,Altitude moyenne,Altitude moyenne de la pénéplaine centrale où se situe Ouagadougou,300,m,YRA A.,2001,Favorise l'étalement horizontal de la ville
+Relief,Pentes,Pentes faibles caractérisant la commune,0.5-1,%,YRA A.,2001,Réduit l'écoulement naturel des eaux
+Pédologie,Caractéristiques générales,Sols peu profonds et pauvres en éléments nutritifs avec faible capacité d'infiltration,,,,,Augmente le ruissellement de surface
+Hydrographie,Bassin versant,Située en grande partie sur le bassin versant du Massili (affluent du Nakambé),,,,,Définit la zone de drainage naturel
+Hydrographie,Barrage 1,Barrage n°1,,,,,Alimentation en eau potable
+Hydrographie,Barrage 2,Barrage n°2,,,,,Alimentation en eau potable
+Hydrographie,Barrage 3,Barrage n°3,,,,,Alimentation en eau potable
+Démographie,Population 1985,Population de la commune de Ouagadougou,465969,habitants,INSD,1985,
+Démographie,Population 1996,Population de la commune de Ouagadougou,750398,habitants,INSD,1996,
+Démographie,Population 2006,Population de la commune de Ouagadougou,1475223,habitants,INSD,2006,Augmentation de la pression urbaine
+Démographie,Population 2012,Population de la commune de Ouagadougou,1915102,habitants,INSD,2012,Augmentation de la pression urbaine
+Démographie,Population 2019,Population de la commune de Ouagadougou,2415266,habitants,INSD,2019,Intensification de l'imperméabilisation des sols
+Urbanisation,Superficie 1992,Superficie du noyau urbain,17355,ha,,1992,
+Urbanisation,Superficie 2002,Superficie du noyau urbain,19284,ha,,2002,Augmentation de 11% en 10 ans
+Urbanisation,Superficie 2012,Superficie du noyau urbain,42249,ha,,2012,Augmentation de 119% entre 2002-2012
+Assainissement,Canal de Wemtenga,Canal aménagé dans le cadre du PACVU drainant Zone 1 Katr Yaar Wemtenga et Dassasgho,4,km,,2004,Partiellement revêtu
+Assainissement,Canal de Zogona,Canal revêtu en béton armé prenant source au secteur 24,3,km,,1999,Relativement en bon état
+Assainissement,Canal Mogho Naaba,Canal drainant SOCOGIB de Ouaga 2000 et quartiers entre boulevard France-Afrique et avenue de la Dignité,5.7,km,,,
+Assainissement,Canal Central,Canal drainant Koulouba ZACA Paspanga et Dapoya,3.3,km,,,Présence de déchets et rejets directs
+Assainissement,Canal de l'Hippodrome,Canal drainant côté Est de Nonsin,0.908,km,,,Chargé de déchets solides
+Assainissement,Canal de la Présidence,Canal de Kossyam drainant le secteur 54,2.8,km,,2013,Globalement en bon état
+Assainissement,Répartition des infrastructures,Plus de 70% des infrastructures d'assainissement localisées dans arrondissements 1 2 et 5,,,,,Inégalité de protection
+Inondations,Facteur aggravant 1,Imperméabilisation des abords des canaux,,,,,Augmente le ruissellement
+Inondations,Facteur aggravant 2,Présence de sols hydromorphes,,,,,Faible capacité d'absorption
+Inondations,Facteur aggravant 3,Érosion des sols,,,,,Augmente le ruissellement
+Inondations,Facteur aggravant 4,Envasement des retenues et cours d'eau,,,,,Réduit la capacité d'évacuation
+Inondations,Inondation majeure,Inondation du 1er septembre 2009 avec 263.3 mm de pluie en 12 heures,263.3,mm,,2009,9 morts et plus de 150 000 sinistrés
+Inondations,Facteur d'influence,47% des pluies à l'origine d'inondation présentent un cumul sur les 5 jours précédents supérieur à 30 mm,30,mm,,,Influence du cumul de pluie
+Réglementation,Bande de servitude canaux,Décret imposant une bande de servitude autour des canaux primaires d'évacuation des eaux pluviales,100,m,Décret post-inondations 2009,2009,Protection des zones à risque
+Réglementation,Zones inondables,Les zones inondables sont déclarées inconstructibles,,,Décret post-inondations 2009,2009,Mesure préventive

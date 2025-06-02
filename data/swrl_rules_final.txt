@@ -1,0 +1,78 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX flood: <http://www.semanticweb.org/ontologies/2025/ouagadougou-flood-prediction#>
+PREFIX swrlb: <http://www.w3.org/2003/11/swrlb#>
+
+
+# Règles SWRL pour l'ontologie de prédiction des inondations à Ouagadougou
+# Générées le 2025-05-24
+# Ces règles sont compatibles avec l'ontologie mise à jour
+
+
+# Règle 1: Risque élevé basé sur fortes précipitations et niveaux d'eau
+flood:MeteorologicalData(?m) ^ 
+flood:HydrologicalData(?h) ^ 
+flood:hasPrecipitation(?m, ?p) ^ 
+flood:hasWaterLevel(?h, ?wl) ^ 
+flood:measuredAt(?m, ?sm) ^
+flood:measuredAt(?h, ?sh) ^
+flood:isLocatedIn(?sm, ?area) ^
+flood:isLocatedIn(?sh, ?area) ^
+swrlb:greaterThan(?p, 30.0) ^ 
+swrlb:greaterThan(?wl, 2.5) 
+-> flood:hasFloodRisk(?area, flood:HighRisk)
+
+
+# Règle 2: Risque pour les zones en aval des barrages à capacité élevée
+flood:HydrologicalData(?h) ^ 
+flood:measuredAt(?h, ?s) ^ 
+flood:Dam(?s) ^ 
+flood:hasCapacityPercentage(?h, ?cp) ^ 
+swrlb:greaterThan(?cp, 85.0) ^
+flood:protects(?s, ?area)
+-> flood:hasFloodRisk(?area, flood:ModerateRisk)
+
+
+# Règle 3: Risque pour les zones à faible pente et sols hydromorphes
+flood:GeographicArea(?area) ^
+flood:hasSlope(?area, ?slope) ^
+swrlb:lessThan(?slope, 1.0) ^
+flood:hasSoilType(?area, ?soil) ^
+flood:HydromorphicSoil(?soil) ^
+flood:MeteorologicalData(?m) ^
+flood:hasPrecipitation(?m, ?p) ^
+flood:measuredAt(?m, ?s) ^
+flood:isLocatedIn(?s, ?area) ^
+swrlb:greaterThan(?p, 15.0)
+-> flood:hasFloodRisk(?area, flood:HighRisk)
+
+
+# Règle 4: Risque pour les quartiers spécifiques près du Massili
+flood:HydrologicalData(?h) ^
+flood:hasDischarge(?h, ?d) ^
+flood:measuredAt(?h, ?s) ^
+flood:hasName(?s, "Gonse") ^
+swrlb:greaterThan(?d, 10.0) ^
+flood:isDownstreamOf(?area, ?s) ^
+flood:GeographicArea(?area)
+-> flood:hasFloodRisk(?area, flood:ModerateRisk)
+
+
+# Règle 5: Alerte précoce basée sur débit élevé du Nakanbé
+flood:HydrologicalData(?h) ^
+flood:hasDischarge(?h, ?d) ^
+flood:measuredAt(?h, ?s) ^
+flood:hasName(?s, "Wayen") ^
+swrlb:greaterThan(?d, 50.0) ^
+flood:City(?city) ^
+flood:hasName(?city, "Ouagadougou")
+-> flood:hasEarlyWarningStatus(?city, flood:Alert)
+
+
+# Règle 6: Classification des zones inondables basée sur l'altitude
+flood:GeographicArea(?area) ^
+flood:hasAltitude(?area, ?alt) ^
+swrlb:lessThan(?alt, 290.0)
+-> flood:isFloodProne(?area, "true"^^xsd:boolean)
